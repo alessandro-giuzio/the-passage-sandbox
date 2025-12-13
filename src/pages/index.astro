@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+const options = [
+  {
+    id: 'a',
+    name: 'Opción A — Elegante y equilibrada',
+    heading: 'Cormorant Garamond',
+    body: 'Inter',
+    why: 'Titulares con presencia y un cuerpo ultra legible para UI. Perfecta si queréis ‘historia + modernidad’ sin verse clásico.',
+    weights:
+      'Titulares: 400/600/700 (cursiva opcional). Texto/UI: 400/500/600/700',
+  },
+  {
+    id: 'b',
+    name: 'Opción B — Premium moderno (arquitectónica)',
+    heading: 'Sora',
+    body: 'Inter',
+    why: 'Limpia, segura y contemporánea. Muy coherente si la línea de marca quiere ser minimal y precisa.',
+    weights: 'Titulares: 500/600/700. Texto/UI: 400/500/600/700',
+  },
+  {
+    id: 'c',
+    name: 'Opción C — Boutique editorial',
+    heading: 'DM Serif Display',
+    body: 'DM Sans',
+    why: 'Más personalidad y calidez. Si queréis un toque ‘revista boutique’, esta opción funciona muy bien.',
+    weights: 'Titulares: regular + cursiva. Texto/UI: 400/500/600/700',
+  },
+];
+---
+
+<Layout>
+  <main class='max-w-6xl px-4 py-10 mx-auto md:px-6'>
+    <!-- Header -->
+    <header class='mb-8'>
+      <p class='text-sm font-medium tracking-wide text-[var(--tp-muted)]'>
+        The Passage — Design Sandbox
+      </p>
+
+      <div
+        class='flex flex-col gap-3 mt-2 md:flex-row md:items-end md:justify-between'>
+        <h1 class='text-3xl font-semibold tracking-tight md:text-4xl'>
+          Comparación de tipografías
+        </h1>
+
+        <div class='flex items-center gap-2'>
+          <span class='text-sm text-[var(--tp-muted)]'>Elige una opción:</span>
+          <select
+            id='typoSelect'
+            class='rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'
+            aria-label='Seleccionar opción tipográfica'>
+            <option value='a'>Opción A</option>
+            <option value='b'>Opción B</option>
+            <option value='c'>Opción C</option>
+          </select>
+        </div>
+      </div>
+
+      <p class='mt-3 max-w-3xl text-sm leading-relaxed text-[var(--tp-muted)]'>
+        Cambia entre opciones y decide con contexto real: hero, texto, botones,
+        formularios y una tarjeta tipo “reserva”.
+      </p>
+    </header>
+
+    <!-- Option cards -->
+    <section
+      class='grid gap-4 mb-10 md:grid-cols-3'
+      aria-label='Resumen de opciones tipográficas'>
+      {
+        options.map(opt => (
+          <article
+            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5 shadow-sm'
+            data-opt={opt.id}>
+            <h2 class='text-sm font-semibold text-[var(--tp-text)]'>
+              {opt.name}
+            </h2>
+
+            <p class='mt-2 text-sm text-[var(--tp-text)]/80'>
+              <span class='font-medium'>Titulares:</span> {opt.heading}
+              <br />
+              <span class='font-medium'>Texto/UI:</span> {opt.body}
+            </p>
+
+            <p class='mt-3 text-sm text-[var(--tp-muted)]'>{opt.why}</p>
+
+            <p class='mt-3 text-xs text-[var(--tp-muted)]'>
+              <span class='font-medium text-[var(--tp-text)]/80'>Pesos:</span>{' '}
+              {opt.weights}
+            </p>
+
+            <button
+              type='button'
+              class='mt-4 inline-flex w-full items-center justify-center rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)] px-3 py-2 text-sm font-medium text-[var(--tp-text)] shadow-sm hover:brightness-95'
+              data-pick={opt.id}>
+              Ver esta opción
+            </button>
+          </article>
+        ))
+      }
+    </section>
+
+    <!-- Live preview -->
+    <section
+      id='preview'
+      class='rounded-3xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-6 shadow-sm md:p-8'
+      aria-label='Vista previa en vivo'
+      data-typo='a'>
+      <!-- “Site chrome” preview -->
+      <div
+        class='flex flex-col gap-4 border-b border-[var(--tp-border)] pb-5 md:flex-row md:items-center md:justify-between'>
+        <div class='flex items-center gap-3'>
+          <div
+            class='h-10 w-10 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)]'>
+          </div>
+          <div>
+            <div
+              class='[font-family:var(--font-heading)] text-lg font-semibold tracking-wide'>
+              THE PASSAGE
+            </div>
+            <div class='text-xs text-[var(--tp-muted)]'>
+              Apartments • Donostia / San Sebastián
+            </div>
+          </div>
+        </div>
+
+        <nav
+          class='flex flex-wrap items-center gap-2 text-sm text-[var(--tp-text)]/80'>
+          <a
+            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
+            href='#'>Apartamentos</a
+          >
+          <a
+            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
+            href='#'>Ubicación</a
+          >
+          <a
+            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
+            href='#'>Preguntas frecuentes</a
+          >
+          <a
+            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
+            href='#'>Contacto</a
+          >
+
+          <a
+            class='rounded-lg bg-[var(--tp-accent)] px-3 py-2 font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-accent-dark)]'
+            href='#'>
+            Reservar
+          </a>
+        </nav>
+      </div>
+
+      <!-- Hero -->
+      <div class='grid gap-6 mt-7 md:grid-cols-12 md:items-center'>
+        <div class='md:col-span-7'>
+          <p
+            class='text-xs font-semibold uppercase tracking-widest text-[var(--tp-muted)]'>
+            Edificio histórico • 1881
+          </p>
+
+          <h2
+            class='[font-family:var(--font-heading)] mt-3 text-4xl leading-tight tracking-tight md:text-5xl'>
+            Una estancia tranquila en el corazón de Donostia.
+          </h2>
+
+          <p
+            class='[font-family:var(--font-body)] mt-4 max-w-xl text-base leading-relaxed text-[var(--tp-text)]/80'>
+            Apartamentos pensados para viajar sin prisa: comodidad, carácter
+            local y todo lo necesario para sentirte en casa, ya sea un fin de
+            semana o una estancia larga.
+          </p>
+
+          <div class='flex flex-wrap gap-3 mt-5'>
+            <a
+              href='#'
+              class='rounded-xl bg-[var(--tp-text)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-bg)] hover:opacity-90'>
+              Comprobar disponibilidad
+            </a>
+            <a
+              href='#'
+              class='rounded-xl border border-[var(--tp-accent)] bg-[var(--tp-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-surface-2)]'>
+              Ver apartamentos
+            </a>
+          </div>
+
+          <div class='mt-4 text-xs text-[var(--tp-muted)]'>
+            Cancelación flexible • Wi-Fi rápido • Self check-in
+          </div>
+        </div>
+
+        <!-- Booking card -->
+        <aside class='md:col-span-5'>
+          <div
+            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)] p-5'>
+            <div class='flex items-start justify-between gap-3'>
+              <div>
+                <div
+                  class='[font-family:var(--font-heading)] text-xl font-semibold'>
+                  Apartamento tipo estudio
+                </div>
+                <div class='mt-1 text-sm text-[var(--tp-muted)]'>
+                  2 personas • 1 baño • 24m²
+                </div>
+              </div>
+              <div class='text-right'>
+                <div class='text-xs text-[var(--tp-muted)]'>Desde</div>
+                <div class='text-xl font-semibold'>129€</div>
+                <div class='text-xs text-[var(--tp-muted)]'>por noche</div>
+              </div>
+            </div>
+
+            <div class='grid gap-3 mt-4'>
+              <label class='text-xs font-medium text-[var(--tp-text)]/80'>
+                Fechas
+                <input
+                  class='mt-1 w-full rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'
+                  placeholder='Entrada → Salida'
+                />
+              </label>
+
+              <label class='text-xs font-medium text-[var(--tp-text)]/80'>
+                Huéspedes
+                <select
+                  class='mt-1 w-full rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'>
+                  <option>1 huésped</option>
+                  <option>2 huéspedes</option>
+                  <option>3 huéspedes</option>
+                  <option>4 huéspedes</option>
+                </select>
+              </label>
+
+              <button
+                class='rounded-xl bg-[var(--tp-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-accent-dark)]'
+                type='button'>
+                Reservar
+              </button>
+
+              <p class='text-xs leading-relaxed text-[var(--tp-muted)]'>
+                Al continuar, aceptas las normas de la casa y la política de
+                cancelación.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Body content -->
+      <div class='grid gap-6 mt-10 md:grid-cols-12'>
+        <article class='md:col-span-8'>
+          <h3
+            class='[font-family:var(--font-heading)] text-2xl font-semibold tracking-tight'>
+            Qué hace diferente a The Passage
+          </h3>
+
+          <p
+            class='[font-family:var(--font-body)] mt-3 text-base leading-relaxed text-[var(--tp-text)]/80'>
+            No buscamos parecer “un hotel estándar”. La idea es una estancia
+            calmada, práctica y conectada con la ciudad, con detalles que se
+            notan cuando estás dentro.
+          </p>
+
+          <ul
+            class='[font-family:var(--font-body)] mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--tp-text)]/80'>
+            <li>Información clara y self check-in fácil</li>
+            <li>Interiores pensados para descansar (cama, ducha, luz)</li>
+            <li>Recomendaciones locales sin “trampas para turistas”</li>
+          </ul>
+
+          <blockquote
+            class='mt-6 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5'>
+            <p
+              class='[font-family:var(--font-heading)] text-lg leading-relaxed'>
+              “Precioso, súper tranquilo y con ubicación perfecta. Sentí que
+              vivía en Donostia.”
+            </p>
+            <p class='mt-2 text-xs text-[var(--tp-muted)]'>
+              — Reseña (ejemplo)
+            </p>
+          </blockquote>
+        </article>
+
+        <aside class='md:col-span-4'>
+          <div
+            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5'>
+            <h4 class='text-sm font-semibold'>Chequeo de micro UI</h4>
+            <p class='mt-2 text-sm text-[var(--tp-muted)]'>
+              Etiquetas, enlaces y texto pequeño deben seguir siendo legibles y
+              “de marca”.
+            </p>
+
+            <div class='mt-4 space-y-3 text-sm'>
+              <div class='flex items-center justify-between'>
+                <span class='text-[var(--tp-muted)]'>Estilo de enlace</span>
+                <a
+                  class='font-semibold underline decoration-[var(--tp-accent)] underline-offset-4'
+                  href='#'>
+                  Ver detalles
+                </a>
+              </div>
+
+              <div class='flex items-center justify-between'>
+                <span class='text-[var(--tp-muted)]'>Badge</span>
+                <span
+                  class='rounded-full border border-[var(--tp-border)] bg-[var(--tp-surface-2)] px-2.5 py-1 text-xs font-semibold'>
+                  Nuevo
+                </span>
+              </div>
+
+              <div class='flex items-center justify-between'>
+                <span class='text-[var(--tp-muted)]'>Texto de ayuda</span>
+                <span class='text-xs text-[var(--tp-muted)]'>Mín. 2 noches</span
+                >
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  /* Palette inspired by ThePassage site imagery + icons */
+  :root {
+    --tp-bg: #f7f2ea; /* warm off-white */
+    --tp-surface: #ffffff; /* card surface */
+    --tp-surface-2: #faf6f0; /* soft sand */
+    --tp-text: #1c1b17; /* near black */
+    --tp-muted: #6f6a62; /* warm grey */
+    --tp-border: #e6dfd4; /* warm border */
+    --tp-accent: #d8b48a; /* beige-gold (icons) */
+    --tp-accent-dark: #b69063;
+    --tp-sage: #9aa79e; /* optional (door metal vibe) */
+  }
+
+  /* Theme → just switches font variables */
+  #preview[data-typo='a'] {
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body:
+      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+  #preview[data-typo='b'] {
+    --font-heading:
+      'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    --font-body:
+      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+  #preview[data-typo='c'] {
+    --font-heading: 'DM Serif Display', ui-serif, Georgia, serif;
+    --font-body:
+      'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+</style>
+
+<script>
+  const select = document.getElementById('typoSelect');
+  const preview = document.getElementById('preview');
+
+  const setTypo = id => {
+    preview.setAttribute('data-typo', id);
+    if (select.value !== id) select.value = id;
+  };
+
+  select?.addEventListener('change', e => setTypo(e.target.value));
+
+  document.querySelectorAll('[data-pick]').forEach(btn => {
+    btn.addEventListener('click', () => setTypo(btn.getAttribute('data-pick')));
+  });
+
+  // default
+  setTypo('a');
+</script>
