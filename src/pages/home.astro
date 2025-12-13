@@ -298,6 +298,7 @@ const faqs = [
                     src={salon}
                     alt='Foto del apartamento'
                     class='h-36 w-full rounded-xl border border-[--tp-border] bg-[--tp-surface-2] object-cover'
+                    format='webp'
                   />
 
                   <h4 class='mt-4 text-xl font-semibold leading-snug tp-heading'>
@@ -462,7 +463,7 @@ const faqs = [
               </p>
             </div>
 
-            <div class='grid gap-4 tp-footer-cols sm:grid-cols-3'>
+            <div class='grid gap-4 tp-footer-cols'>
               <div>
                 <div
                   class='text-xs font-semibold uppercase tracking-widest text-[var(--tp-muted-2)]'>
@@ -579,6 +580,14 @@ const faqs = [
   /* Base (mobile-first) */
   .tp-header-inner {
   }
+  .tp-hero,
+  .tp-grid-apartments,
+  .tp-grid-highlights,
+  .tp-grid-testimonials,
+  .tp-footer,
+  .tp-footer-cols {
+    display: grid;
+  }
   .tp-hero {
     grid-template-columns: 1fr;
   }
@@ -593,6 +602,15 @@ const faqs = [
   }
   .tp-footer {
     grid-template-columns: 1fr;
+  }
+  .tp-footer-cols {
+    grid-template-columns: 1fr;
+  }
+  #frame[data-vp='tablet'] .tp-footer-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  #frame[data-vp='desktop'] .tp-footer-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   /* Tablet mode */
