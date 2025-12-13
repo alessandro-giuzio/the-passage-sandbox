@@ -1,1 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+:root {
+  /* Astra Global Colors (ThePassage.es) */
+  --tp-accent: #046bd2; /* ast-global-color-0 */
+  --tp-accent-dark: #045cb4; /* ast-global-color-1 */
+
+  --tp-text: #1e293b; /* ast-global-color-2 */
+  --tp-muted: #334155; /* ast-global-color-3 */
+
+  --tp-bg: #f9fafb; /* ast-global-color-4 */
+  --tp-surface: #ffffff; /* ast-global-color-5 */
+  --tp-surface-2: #f9fafb; /* keep subtle, matches bg */
+
+  --tp-border: #e2e8f0; /* ast-global-color-6 */
+  --tp-border-2: #cbd5e1; /* ast-global-color-7 */
+  --tp-muted-2: #94a3b8; /* ast-global-color-8 */
+}

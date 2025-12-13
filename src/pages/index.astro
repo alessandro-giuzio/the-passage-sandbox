@@ -33,7 +33,7 @@ const options = [
   <main class='max-w-6xl px-4 py-10 mx-auto md:px-6'>
     <!-- Header -->
     <header class='mb-8'>
-      <p class='text-sm font-medium tracking-wide text-[var(--tp-muted)]'>
+      <p class='text-sm font-medium tracking-wide text-(--tp-muted)'>
         The Passage — Design Sandbox
       </p>
 
@@ -44,10 +44,10 @@ const options = [
         </h1>
 
         <div class='flex items-center gap-2'>
-          <span class='text-sm text-[var(--tp-muted)]'>Elige una opción:</span>
+          <span class='text-sm text-(--tp-muted)'>Elige una opción:</span>
           <select
             id='typoSelect'
-            class='rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'
+            class='rounded-xl border border-(--tp-border) bg-(--tp-surface) px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-(--tp-accent)'
             aria-label='Seleccionar opción tipográfica'>
             <option value='a'>Opción A</option>
             <option value='b'>Opción B</option>
@@ -56,7 +56,7 @@ const options = [
         </div>
       </div>
 
-      <p class='mt-3 max-w-3xl text-sm leading-relaxed text-[var(--tp-muted)]'>
+      <p class='mt-3 max-w-3xl text-sm leading-relaxed text-(--tp-muted)'>
         Cambia entre opciones y decide con contexto real: hero, texto, botones,
         formularios y una tarjeta tipo “reserva”.
       </p>
@@ -69,28 +69,26 @@ const options = [
       {
         options.map(opt => (
           <article
-            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5 shadow-sm'
+            class='rounded-2xl border border-(--tp-border) bg-(--tp-surface) p-5 shadow-sm'
             data-opt={opt.id}>
-            <h2 class='text-sm font-semibold text-[var(--tp-text)]'>
-              {opt.name}
-            </h2>
+            <h2 class='text-sm font-semibold text-(--tp-text)'>{opt.name}</h2>
 
-            <p class='mt-2 text-sm text-[var(--tp-text)]/80'>
+            <p class='mt-2 text-sm text-(--tp-text)/80'>
               <span class='font-medium'>Titulares:</span> {opt.heading}
               <br />
               <span class='font-medium'>Texto/UI:</span> {opt.body}
             </p>
 
-            <p class='mt-3 text-sm text-[var(--tp-muted)]'>{opt.why}</p>
+            <p class='mt-3 text-sm text-(--tp-muted)'>{opt.why}</p>
 
-            <p class='mt-3 text-xs text-[var(--tp-muted)]'>
-              <span class='font-medium text-[var(--tp-text)]/80'>Pesos:</span>{' '}
+            <p class='mt-3 text-xs text-(--tp-muted)'>
+              <span class='font-medium text-(--tp-text)/80'>Pesos:</span>{' '}
               {opt.weights}
             </p>
 
             <button
               type='button'
-              class='mt-4 inline-flex w-full items-center justify-center rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)] px-3 py-2 text-sm font-medium text-[var(--tp-text)] shadow-sm hover:brightness-95'
+              class='mt-4 inline-flex w-full items-center justify-center rounded-xl border border-(--tp-border) bg-(--tp-surface-2) px-3 py-2 text-sm font-medium text-(--tp-text) shadow-sm hover:brightness-95'
               data-pick={opt.id}>
               Ver esta opción
             </button>
@@ -102,48 +100,44 @@ const options = [
     <!-- Live preview -->
     <section
       id='preview'
-      class='rounded-3xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-6 shadow-sm md:p-8'
+      class='rounded-3xl border border-(--tp-border) bg-(--tp-surface) p-6 shadow-sm md:p-8'
       aria-label='Vista previa en vivo'
       data-typo='a'>
       <!-- “Site chrome” preview -->
       <div
-        class='flex flex-col gap-4 border-b border-[var(--tp-border)] pb-5 md:flex-row md:items-center md:justify-between'>
+        class='flex flex-col gap-4 border-b border-(--tp-border) pb-5 md:flex-row md:items-center md:justify-between'>
         <div class='flex items-center gap-3'>
           <div
-            class='h-10 w-10 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)]'>
+            class='h-10 w-10 rounded-2xl border border-(--tp-border) bg-(--tp-surface-2)'>
           </div>
           <div>
             <div
               class='[font-family:var(--font-heading)] text-lg font-semibold tracking-wide'>
               THE PASSAGE
             </div>
-            <div class='text-xs text-[var(--tp-muted)]'>
+            <div class='text-xs text-(--tp-muted)'>
               Apartments • Donostia / San Sebastián
             </div>
           </div>
         </div>
 
         <nav
-          class='flex flex-wrap items-center gap-2 text-sm text-[var(--tp-text)]/80'>
-          <a
-            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
-            href='#'>Apartamentos</a
+          class='flex flex-wrap items-center gap-2 text-sm text-(--tp-text)/80'>
+          <a class='rounded-lg px-3 py-2 hover:bg-(--tp-surface-2)' href='#'
+            >Apartamentos</a
           >
-          <a
-            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
-            href='#'>Ubicación</a
+          <a class='rounded-lg px-3 py-2 hover:bg-(--tp-surface-2)' href='#'
+            >Ubicación</a
           >
-          <a
-            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
-            href='#'>Preguntas frecuentes</a
+          <a class='rounded-lg px-3 py-2 hover:bg-(--tp-surface-2)' href='#'
+            >Preguntas frecuentes</a
           >
-          <a
-            class='rounded-lg px-3 py-2 hover:bg-[var(--tp-surface-2)]'
-            href='#'>Contacto</a
+          <a class='rounded-lg px-3 py-2 hover:bg-(--tp-surface-2)' href='#'
+            >Contacto</a
           >
 
           <a
-            class='rounded-lg bg-[var(--tp-accent)] px-3 py-2 font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-accent-dark)]'
+            class='rounded-lg bg-(--tp-accent) px-3 py-2 font-semibold text-(--tp-text) hover:bg-(--tp-accent-dark)'
             href='#'>
             Reservar
           </a>
@@ -154,7 +148,7 @@ const options = [
       <div class='grid gap-6 mt-7 md:grid-cols-12 md:items-center'>
         <div class='md:col-span-7'>
           <p
-            class='text-xs font-semibold uppercase tracking-widest text-[var(--tp-muted)]'>
+            class='text-xs font-semibold uppercase tracking-widest text-(--tp-muted)'>
             Edificio histórico • 1881
           </p>
 
@@ -164,7 +158,7 @@ const options = [
           </h2>
 
           <p
-            class='[font-family:var(--font-body)] mt-4 max-w-xl text-base leading-relaxed text-[var(--tp-text)]/80'>
+            class='[font-family:var(--font-body)] mt-4 max-w-xl text-base leading-relaxed text-(--tp-text)/80'>
             Apartamentos pensados para viajar sin prisa: comodidad, carácter
             local y todo lo necesario para sentirte en casa, ya sea un fin de
             semana o una estancia larga.
@@ -173,17 +167,17 @@ const options = [
           <div class='flex flex-wrap gap-3 mt-5'>
             <a
               href='#'
-              class='rounded-xl bg-[var(--tp-text)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-bg)] hover:opacity-90'>
+              class='rounded-xl bg-(--tp-accent) px-4 py-2.5 text-sm font-semibold text-(--tp-bg) hover:opacity-90'>
               Comprobar disponibilidad
             </a>
             <a
               href='#'
-              class='rounded-xl border border-[var(--tp-accent)] bg-[var(--tp-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-surface-2)]'>
+              class='rounded-xl border border-(--tp-accent) bg-(--tp-surface) px-4 py-2.5 text-sm font-semibold text-(--tp-text) hover:bg-(--tp-surface-2)'>
               Ver apartamentos
             </a>
           </div>
 
-          <div class='mt-4 text-xs text-[var(--tp-muted)]'>
+          <div class='mt-4 text-xs text-(--tp-muted)'>
             Cancelación flexible • Wi-Fi rápido • Self check-in
           </div>
         </div>
@@ -191,37 +185,37 @@ const options = [
         <!-- Booking card -->
         <aside class='md:col-span-5'>
           <div
-            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)] p-5'>
+            class='rounded-2xl border border-(--tp-border) bg-(--tp-surface-2) p-5'>
             <div class='flex items-start justify-between gap-3'>
               <div>
                 <div
                   class='[font-family:var(--font-heading)] text-xl font-semibold'>
                   Apartamento tipo estudio
                 </div>
-                <div class='mt-1 text-sm text-[var(--tp-muted)]'>
+                <div class='mt-1 text-sm text-(--tp-muted)'>
                   2 personas • 1 baño • 24m²
                 </div>
               </div>
               <div class='text-right'>
-                <div class='text-xs text-[var(--tp-muted)]'>Desde</div>
+                <div class='text-xs text-(--tp-muted)'>Desde</div>
                 <div class='text-xl font-semibold'>129€</div>
-                <div class='text-xs text-[var(--tp-muted)]'>por noche</div>
+                <div class='text-xs text-(--tp-muted)'>por noche</div>
               </div>
             </div>
 
             <div class='grid gap-3 mt-4'>
-              <label class='text-xs font-medium text-[var(--tp-text)]/80'>
+              <label class='text-xs font-medium text-(--tp-text)/80'>
                 Fechas
                 <input
-                  class='mt-1 w-full rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'
+                  class='mt-1 w-full rounded-xl border border-(--tp-border) bg-(--tp-surface) px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-(--tp-accent)'
                   placeholder='Entrada → Salida'
                 />
               </label>
 
-              <label class='text-xs font-medium text-[var(--tp-text)]/80'>
+              <label class='text-xs font-medium text-(--tp-text)/80'>
                 Huéspedes
                 <select
-                  class='mt-1 w-full rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'>
+                  class='mt-1 w-full rounded-xl border border-(--tp-border) bg-(--tp-surface) px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-(--tp-accent)'>
                   <option>1 huésped</option>
                   <option>2 huéspedes</option>
                   <option>3 huéspedes</option>
@@ -230,12 +224,12 @@ const options = [
               </label>
 
               <button
-                class='rounded-xl bg-[var(--tp-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-accent-dark)]'
+                class='rounded-xl bg-(--tp-accent) px-4 py-2.5 text-sm font-semibold text-(--tp-text) hover:bg-(--tp-accent-dark)'
                 type='button'>
                 Reservar
               </button>
 
-              <p class='text-xs leading-relaxed text-[var(--tp-muted)]'>
+              <p class='text-xs leading-relaxed text-(--tp-muted)'>
                 Al continuar, aceptas las normas de la casa y la política de
                 cancelación.
               </p>
@@ -253,63 +247,60 @@ const options = [
           </h3>
 
           <p
-            class='[font-family:var(--font-body)] mt-3 text-base leading-relaxed text-[var(--tp-text)]/80'>
+            class='[font-family:var(--font-body)] mt-3 text-base leading-relaxed text-(--tp-text)/80'>
             No buscamos parecer “un hotel estándar”. La idea es una estancia
             calmada, práctica y conectada con la ciudad, con detalles que se
             notan cuando estás dentro.
           </p>
 
           <ul
-            class='[font-family:var(--font-body)] mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--tp-text)]/80'>
+            class='[font-family:var(--font-body)] mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-(--tp-text)/80'>
             <li>Información clara y self check-in fácil</li>
             <li>Interiores pensados para descansar (cama, ducha, luz)</li>
             <li>Recomendaciones locales sin “trampas para turistas”</li>
           </ul>
 
           <blockquote
-            class='mt-6 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5'>
+            class='mt-6 rounded-2xl border border-(--tp-border) bg-(--tp-surface) p-5'>
             <p
               class='[font-family:var(--font-heading)] text-lg leading-relaxed'>
               “Precioso, súper tranquilo y con ubicación perfecta. Sentí que
               vivía en Donostia.”
             </p>
-            <p class='mt-2 text-xs text-[var(--tp-muted)]'>
-              — Reseña (ejemplo)
-            </p>
+            <p class='mt-2 text-xs text-(--tp-muted)'>— Reseña (ejemplo)</p>
           </blockquote>
         </article>
 
         <aside class='md:col-span-4'>
           <div
-            class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5'>
+            class='rounded-2xl border border-(--tp-border) bg-(--tp-surface) p-5'>
             <h4 class='text-sm font-semibold'>Chequeo de micro UI</h4>
-            <p class='mt-2 text-sm text-[var(--tp-muted)]'>
+            <p class='mt-2 text-sm text-(--tp-muted)'>
               Etiquetas, enlaces y texto pequeño deben seguir siendo legibles y
               “de marca”.
             </p>
 
             <div class='mt-4 space-y-3 text-sm'>
               <div class='flex items-center justify-between'>
-                <span class='text-[var(--tp-muted)]'>Estilo de enlace</span>
+                <span class='text-(--tp-muted)'>Estilo de enlace</span>
                 <a
-                  class='font-semibold underline decoration-[var(--tp-accent)] underline-offset-4'
+                  class='font-semibold underline decoration-(--tp-accent) underline-offset-4'
                   href='#'>
                   Ver detalles
                 </a>
               </div>
 
               <div class='flex items-center justify-between'>
-                <span class='text-[var(--tp-muted)]'>Badge</span>
+                <span class='text-(--tp-muted)'>Badge</span>
                 <span
-                  class='rounded-full border border-[var(--tp-border)] bg-[var(--tp-surface-2)] px-2.5 py-1 text-xs font-semibold'>
+                  class='rounded-full border border-(--tp-border) bg-(--tp-surface-2) px-2.5 py-1 text-xs font-semibold'>
                   Nuevo
                 </span>
               </div>
 
               <div class='flex items-center justify-between'>
-                <span class='text-[var(--tp-muted)]'>Texto de ayuda</span>
-                <span class='text-xs text-[var(--tp-muted)]'>Mín. 2 noches</span
-                >
+                <span class='text-(--tp-muted)'>Texto de ayuda</span>
+                <span class='text-xs text-(--tp-muted)'>Mín. 2 noches</span>
               </div>
             </div>
           </div>
