@@ -19,6 +19,20 @@ import '../styles/global.css';
     <title>The Passage — Sandbox</title>
   </head>
   <body class='min-h-screen bg-(--tp-bg) text-(--tp-text)'>
+    <nav class='mx-auto max-w-6xl px-4 pt-6 md:px-6'>
+      <div class='flex flex-wrap items-center gap-2 text-sm'>
+        <a
+          href='/'
+          class='rounded-lg border border-(--tp-border) bg-(--tp-surface) px-3 py-2 hover:bg-(--tp-surface-2)'>
+          Tipografía
+        </a>
+        <a
+          href='/home'
+          class='rounded-lg border border-(--tp-border) bg-(--tp-surface) px-3 py-2 hover:bg-(--tp-surface-2)'>
+          Mock Home
+        </a>
+      </div>
+    </nav>
     <slot />
   </body>
 </html>
