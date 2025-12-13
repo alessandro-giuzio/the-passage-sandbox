@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import salon from '../assets/apto-2-hab.jpg';
 
 const typoOptions = [
   { id: 'a', label: 'Opción A (Cormorant + Inter)' },
@@ -270,19 +272,19 @@ const faqs = [
         </section>
 
         <!-- Apartments -->
-        <section class='border-t border-[var(--tp-border)] px-5 py-7'>
+        <section class='border-t border-(--tp-border) px-5 py-7'>
           <div class='flex flex-col gap-2'>
             <div>
               <h3 class='text-2xl font-semibold tracking-tight tp-heading'>
                 Apartamentos
               </h3>
-              <p class='mt-2 text-sm leading-relaxed text-[var(--tp-muted)]'>
+              <p class='mt-2 text-sm leading-relaxed text-(--tp-muted)'>
                 Tarjetas con contenido real: nombres, metadatos, precio y CTA.
               </p>
             </div>
 
             <a
-              class='text-sm font-semibold text-[var(--tp-accent-dark)] hover:underline'
+              class='text-sm font-semibold text-(--tp-accent-dark) hover:underline'
               href='#'>
               Ver todos →
             </a>
@@ -291,32 +293,33 @@ const faqs = [
           <div class='grid gap-4 mt-5 tp-grid-apartments'>
             {
               apartments.map(a => (
-                <article class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5 shadow-sm'>
-                  <div
-                    class='h-36 w-full rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)]'
-                    aria-hidden='true'
+                <article class='rounded-2xl border border-(--tp-border) bg-(--tp-surface) p-5 shadow-sm'>
+                  <Image
+                    src={salon}
+                    alt='Foto del apartamento'
+                    class='h-36 w-full rounded-xl border border-[--tp-border] bg-[--tp-surface-2] object-cover'
                   />
 
                   <h4 class='mt-4 text-xl font-semibold leading-snug tp-heading'>
                     {a.name}
                   </h4>
 
-                  <p class='mt-1 text-sm text-[var(--tp-muted)]'>{a.meta}</p>
+                  <p class='mt-1 text-sm text-(--tp-muted)'>{a.meta}</p>
                   <p class='mt-3 text-sm font-semibold'>{a.price}</p>
 
-                  <p class='mt-2 text-sm leading-relaxed text-[var(--tp-muted)]'>
+                  <p class='mt-2 text-sm leading-relaxed text-(--tp-muted)'>
                     {a.note}
                   </p>
 
                   <div class='flex flex-wrap gap-2 mt-4'>
                     <a
                       href='#'
-                      class='rounded-xl bg-[var(--tp-accent)] px-3 py-2 text-sm font-semibold text-[var(--tp-text)] hover:bg-[var(--tp-accent-dark)]'>
+                      class='rounded-xl bg-(--tp-accent) px-3 py-2 text-sm font-semibold text-(--tp-text) hover:bg-(--tp-accent-dark)'>
                       Ver detalles
                     </a>
                     <a
                       href='#'
-                      class='rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm font-semibold hover:bg-[var(--tp-surface-2)]'>
+                      class='rounded-xl border border-(--tp-border) bg-(--tp-surface) px-3 py-2 text-sm font-semibold hover:bg-(--tp-surface-2)'>
                       Favorito
                     </a>
                   </div>
@@ -327,7 +330,7 @@ const faqs = [
         </section>
 
         <!-- Highlights -->
-        <section class='border-t border-[var(--tp-border)] px-5 py-7'>
+        <section class='border-t border-(--tp-border) px-5 py-7'>
           <h3 class='text-2xl font-semibold tracking-tight tp-heading'>
             Una experiencia sin complicaciones
           </h3>
@@ -348,15 +351,15 @@ const faqs = [
                   'Comer y pasear como si vivieras aquí.',
                 ],
               ].map(([t, d]) => (
-                <div class='rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-5 shadow-sm'>
+                <div class='rounded-2xl border border-(--tp-border) bg-(--tp-surface) p-5 shadow-sm'>
                   <div class='flex items-start gap-3'>
                     <div
-                      class='mt-0.5 h-10 w-10 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)]'
+                      class='mt-0.5 h-10 w-10 rounded-2xl border border-(--tp-border) bg-(--tp-surface-2)'
                       aria-hidden='true'
                     />
                     <div>
                       <h4 class='text-sm font-semibold'>{t}</h4>
-                      <p class='mt-2 text-sm leading-relaxed text-[var(--tp-muted)]'>
+                      <p class='mt-2 text-sm leading-relaxed text-(--tp-muted)'>
                         {d}
                       </p>
                     </div>
