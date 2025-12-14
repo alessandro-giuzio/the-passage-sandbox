@@ -64,14 +64,14 @@ const faqs = [
     <header
       class='flex flex-col gap-4 mb-7 md:flex-row md:items-end md:justify-between'>
       <div>
-        <p class='text-sm font-medium tracking-wide text-[var(--tp-muted)]'>
+        <p class='text-sm font-medium tracking-wide text-(--tp-muted)'>
           The Passage — Design Sandbox
         </p>
-        <h1 class='mt-2 text-3xl font-semibold tracking-tight md:text-4xl'>
+        <h1
+          class='tp-heading mt-2 text-3xl font-semibold tracking-tight md:text-4xl'>
           Mock Home
         </h1>
-        <p
-          class='mt-2 max-w-2xl text-sm leading-relaxed text-[var(--tp-muted)]'>
+        <p class='mt-2 max-w-2xl text-sm leading-relaxed text-(--tp-muted)'>
           Esta página simula una homepage real para decidir tipografía y colores
           con contexto: navegación, hero, tarjetas, formularios, testimonios,
           FAQ y footer.
@@ -80,21 +80,21 @@ const faqs = [
 
       <div class='flex flex-col gap-3 sm:flex-row sm:items-center'>
         <!-- Typography -->
-        <label class='flex items-center gap-2 text-sm text-[var(--tp-muted)]'>
+        <label class='flex items-center gap-2 text-sm text-(--tp-muted)'>
           Tipografía
           <select
             id='typoSelect'
-            class='rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--tp-accent)]'>
+            class='rounded-xl border border-(--tp-border) bg-(--tp-surface) px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-(--tp-accent)'>
             {typoOptions.map(o => <option value={o.id}>{o.label}</option>)}
           </select>
         </label>
 
         <!-- Viewport -->
         <div class='flex items-center gap-2'>
-          <span class='text-sm text-[var(--tp-muted)]'>Vista</span>
+          <span class='text-sm text-(--tp-muted)'>Vista</span>
           <div
             id='vpGroup'
-            class='inline-flex rounded-xl border border-[var(--tp-border)] bg-[var(--tp-surface)] p-1 shadow-sm'>
+            class='inline-flex rounded-xl border border-(--tp-border) bg-(--tp-surface) p-1 shadow-sm'>
             <button
               type='button'
               class='px-3 py-2 text-sm font-medium rounded-lg tp-vp-btn'
@@ -126,20 +126,20 @@ const faqs = [
       data-vp='desktop'
       aria-label='Vista previa'>
       <div
-        class='overflow-hidden rounded-3xl border border-[var(--tp-border)] bg-[var(--tp-surface)] shadow-sm'>
+        class='overflow-hidden rounded-3xl border border-(--tp-border) bg-(--tp-surface) shadow-sm'>
         <!-- Site header -->
-        <div class='tp-header border-b border-[var(--tp-border)] px-5 py-4'>
+        <div class='tp-header border-b border-(--tp-border) px-5 py-4'>
           <div class='flex flex-col gap-4 tp-header-inner'>
             <div class='flex items-center gap-3'>
               <div
-                class='h-10 w-10 rounded-2xl border border-[var(--tp-border)] bg-[var(--tp-surface-2)]'
+                class='h-10 w-10 rounded-2xl border border-(--tp-border) bg-(--tp-surface-2)'
                 aria-hidden='true'>
               </div>
               <div>
-                <div class='text-lg font-semibold tracking-wide tp-heading'>
+                <div class='tp-heading text-lg font-semibold tracking-wide'>
                   THE PASSAGE
                 </div>
-                <div class='text-xs text-[var(--tp-muted)]'>
+                <div class='text-xs text-(--tp-muted)'>
                   Apartments • Donostia / San Sebastián
                 </div>
               </div>
@@ -454,10 +454,10 @@ const faqs = [
           class='border-t border-[var(--tp-border)] bg-[var(--tp-surface-2)] px-5 py-7'>
           <div class='grid gap-6 tp-footer'>
             <div>
-              <div class='text-lg font-semibold tracking-wide tp-heading'>
+              <div class='tp-heading text-lg font-semibold tracking-wide'>
                 THE PASSAGE
               </div>
-              <p class='mt-2 text-sm leading-relaxed text-[var(--tp-muted)]'>
+              <p class='mt-2 text-sm leading-relaxed text-(--tp-muted)'>
                 Apartamentos en Donostia / San Sebastián. Diseño pensado para
                 descansar y vivir la ciudad con calma.
               </p>
@@ -466,10 +466,10 @@ const faqs = [
             <div class='grid gap-4 tp-footer-cols'>
               <div>
                 <div
-                  class='text-xs font-semibold uppercase tracking-widest text-[var(--tp-muted-2)]'>
+                  class='text-xs font-semibold uppercase tracking-widest text-(--tp-muted-2)'>
                   Enlaces
                 </div>
-                <ul class='mt-3 space-y-2 text-sm text-[var(--tp-muted)]'>
+                <ul class='mt-3 space-y-2 text-sm text-(--tp-muted)'>
                   <li>
                     <a class='hover:underline' href='#'>Apartamentos</a>
                   </li>
@@ -517,203 +517,233 @@ const faqs = [
       </div>
     </section>
   </main>
-</Layout>
 
-<style is:global>
-  /* Warm palette (the one we made before) */
-  :root {
-    --tp-bg: #f7f2ea; /* warm off-white */
-    --tp-surface: #ffffff; /* card surface */
-    --tp-surface-2: #faf6f0; /* soft sand */
-    --tp-text: #1c1b17; /* near black */
-    --tp-muted: #6f6a62; /* warm grey */
-    --tp-border: #e6dfd4; /* warm border */
-    --tp-accent: #d8b48a; /* beige-gold */
-    --tp-accent-dark: #b69063;
-    --tp-muted-2: #9a948b; /* secondary muted */
-  }
+  <style is:global>
+    /* Warm palette (the one we made before) */
+    :root {
+      --tp-bg: #f7f2ea; /* warm off-white */
+      --tp-surface: #ffffff; /* card surface */
+      --tp-surface-2: #faf6f0; /* soft sand */
+      --tp-text: #1c1b17; /* near black */
+      --tp-muted: #6f6a62; /* warm grey */
+      --tp-border: #e6dfd4; /* warm border */
+      --tp-accent: #d8b48a; /* beige-gold */
+      --tp-accent-dark: #b69063;
+      --tp-muted-2: #9a948b; /* secondary muted */
+    }
 
-  /* Fonts (A/B/C) */
-  #frame[data-typo='a'] {
-    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
-    --font-body:
-      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
-  }
-  #frame[data-typo='b'] {
-    --font-heading:
-      'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
-    --font-body:
-      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
-  }
-  #frame[data-typo='c'] {
-    --font-heading: 'DM Serif Display', ui-serif, Georgia, serif;
-    --font-body:
-      'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
-  }
+    /* Fonts (A/B/C) - apply to body so the control panel also gets updated */
+    body[data-typo='a'] {
+      --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+      --font-body:
+        'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
+    body[data-typo='b'] {
+      --font-heading:
+        'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+      --font-body:
+        'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
+    body[data-typo='c'] {
+      --font-heading: 'DM Serif Display', ui-serif, Georgia, serif;
+      --font-body:
+        'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
 
-  /* Apply font vars inside the frame */
-  #frame {
-    font-family: var(--font-body);
-  }
-  #frame .tp-heading {
-    font-family: var(--font-heading);
-  }
+    /* Apply font vars globally */
+    body {
+      font-family: var(--font-body);
+    }
+    .tp-heading {
+      font-family: var(--font-heading) !important;
+    }
 
-  /* Viewport sizes (frame width) */
-  #frame[data-vp='mobile'] {
-    max-width: 390px;
-  }
-  #frame[data-vp='tablet'] {
-    max-width: 820px;
-  }
-  #frame[data-vp='desktop'] {
-    max-width: 1100px;
-  }
+    /* Keep frame-specific font rules for backwards compatibility */
+    #frame[data-typo='a'] {
+      --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+      --font-body:
+        'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
+    #frame[data-typo='b'] {
+      --font-heading:
+        'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+      --font-body:
+        'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
+    #frame[data-typo='c'] {
+      --font-heading: 'DM Serif Display', ui-serif, Georgia, serif;
+      --font-body:
+        'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    }
 
-  /* ---- The important part: “responsiveness” based on the frame mode ----
+    #frame {
+      font-family: var(--font-body);
+    }
+    #frame .tp-heading {
+      font-family: var(--font-heading) !important;
+    }
+
+    /* Viewport sizes (frame width) */
+    #frame[data-vp='mobile'] {
+      max-width: 390px;
+    }
+    #frame[data-vp='tablet'] {
+      max-width: 820px;
+    }
+    #frame[data-vp='desktop'] {
+      max-width: 1100px;
+    }
+
+    /* ---- The important part: “responsiveness” based on the frame mode ----
      We avoid Tailwind md: breakpoints INSIDE the frame, and control layout here.
   */
-  /* Base (mobile-first) */
-  .tp-header-inner {
-  }
-  .tp-hero,
-  .tp-grid-apartments,
-  .tp-grid-highlights,
-  .tp-grid-testimonials,
-  .tp-footer,
-  .tp-footer-cols {
-    display: grid;
-  }
-  .tp-hero {
-    grid-template-columns: 1fr;
-  }
-  .tp-grid-apartments {
-    grid-template-columns: 1fr;
-  }
-  .tp-grid-highlights {
-    grid-template-columns: 1fr;
-  }
-  .tp-grid-testimonials {
-    grid-template-columns: 1fr;
-  }
-  .tp-footer {
-    grid-template-columns: 1fr;
-  }
-  .tp-footer-cols {
-    grid-template-columns: 1fr;
-  }
-  #frame[data-vp='tablet'] .tp-footer-cols {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  #frame[data-vp='desktop'] .tp-footer-cols {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+    /* Base (mobile-first) */
+    .tp-header-inner {
+    }
+    .tp-hero,
+    .tp-grid-apartments,
+    .tp-grid-highlights,
+    .tp-grid-testimonials,
+    .tp-footer,
+    .tp-footer-cols {
+      display: grid;
+    }
+    .tp-hero {
+      grid-template-columns: 1fr;
+    }
+    .tp-grid-apartments {
+      grid-template-columns: 1fr;
+    }
+    .tp-grid-highlights {
+      grid-template-columns: 1fr;
+    }
+    .tp-grid-testimonials {
+      grid-template-columns: 1fr;
+    }
+    .tp-footer {
+      grid-template-columns: 1fr;
+    }
+    .tp-footer-cols {
+      grid-template-columns: 1fr;
+    }
+    #frame[data-vp='tablet'] .tp-footer-cols {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #frame[data-vp='desktop'] .tp-footer-cols {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
-  /* Tablet mode */
-  #frame[data-vp='tablet'] .tp-hero {
-    grid-template-columns: 1fr;
-  }
-  #frame[data-vp='tablet'] .tp-grid-apartments {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #frame[data-vp='tablet'] .tp-grid-highlights {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #frame[data-vp='tablet'] .tp-grid-testimonials {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    /* Tablet mode */
+    #frame[data-vp='tablet'] .tp-hero {
+      grid-template-columns: 1fr;
+    }
+    #frame[data-vp='tablet'] .tp-grid-apartments {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    #frame[data-vp='tablet'] .tp-grid-highlights {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    #frame[data-vp='tablet'] .tp-grid-testimonials {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  /* Desktop mode */
-  #frame[data-vp='desktop'] .tp-header {
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-  }
-  #frame[data-vp='desktop'] .tp-header-inner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  #frame[data-vp='desktop'] .tp-hero {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    align-items: center;
-  }
-  #frame[data-vp='desktop'] .tp-hero > div {
-    grid-column: span 7 / span 7;
-  }
-  #frame[data-vp='desktop'] .tp-hero > aside {
-    grid-column: span 5 / span 5;
-  }
+    /* Desktop mode */
+    #frame[data-vp='desktop'] .tp-header {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+    #frame[data-vp='desktop'] .tp-header-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    #frame[data-vp='desktop'] .tp-hero {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-items: center;
+    }
+    #frame[data-vp='desktop'] .tp-hero > div {
+      grid-column: span 7 / span 7;
+    }
+    #frame[data-vp='desktop'] .tp-hero > aside {
+      grid-column: span 5 / span 5;
+    }
 
-  #frame[data-vp='desktop'] .tp-grid-apartments {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  #frame[data-vp='desktop'] .tp-grid-highlights {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  #frame[data-vp='desktop'] .tp-grid-testimonials {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+    #frame[data-vp='desktop'] .tp-grid-apartments {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #frame[data-vp='desktop'] .tp-grid-highlights {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #frame[data-vp='desktop'] .tp-grid-testimonials {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
-  #frame[data-vp='desktop'] footer {
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-  }
-  #frame[data-vp='desktop'] .tp-footer {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-  #frame[data-vp='desktop'] .tp-footer > div:first-child {
-    grid-column: span 5 / span 5;
-  }
-  #frame[data-vp='desktop'] .tp-footer > div:last-child {
-    grid-column: span 7 / span 7;
-  }
+    #frame[data-vp='desktop'] footer {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+    #frame[data-vp='desktop'] .tp-footer {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    #frame[data-vp='desktop'] .tp-footer > div:first-child {
+      grid-column: span 5 / span 5;
+    }
+    #frame[data-vp='desktop'] .tp-footer > div:last-child {
+      grid-column: span 7 / span 7;
+    }
 
-  /* Viewport buttons styling via data-active (no Tailwind purge issues) */
-  .tp-vp-btn {
-    color: var(--tp-muted);
-  }
-  .tp-vp-btn:hover {
-    background: var(--tp-surface-2);
-  }
-  .tp-vp-btn[data-active='true'] {
-    background: var(--tp-surface-2);
-    color: var(--tp-text);
-    box-shadow: inset 0 0 0 1px var(--tp-border);
-  }
-</style>
+    /* Viewport buttons styling via data-active (no Tailwind purge issues) */
+    .tp-vp-btn {
+      color: var(--tp-muted);
+    }
+    .tp-vp-btn:hover {
+      background: var(--tp-surface-2);
+    }
+    .tp-vp-btn[data-active='true'] {
+      background: var(--tp-surface-2);
+      color: var(--tp-text);
+      box-shadow: inset 0 0 0 1px var(--tp-border);
+    }
+  </style>
 
-<script>
-  const frame = document.getElementById('frame');
-  const typoSelect = document.getElementById('typoSelect');
-  const vpButtons = Array.from(document.querySelectorAll('.tp-vp-btn'));
+  <script>
+    const frame = document.getElementById('frame');
+    const typoSelect = document.getElementById('typoSelect');
+    const vpButtons = Array.from(document.querySelectorAll('.tp-vp-btn'));
 
-  function setTypo(id) {
-    frame?.setAttribute('data-typo', id);
-    if (typoSelect && typoSelect.value !== id) typoSelect.value = id;
-  }
+    function setTypo(id) {
+      frame?.setAttribute('data-typo', id);
+      document.body.setAttribute('data-typo', id);
+      if (typoSelect && typoSelect.value !== id) typoSelect.value = id;
+    }
 
-  function setVp(vp) {
-    frame?.setAttribute('data-vp', vp);
-    vpButtons.forEach(b => {
-      b.setAttribute(
-        'data-active',
-        b.getAttribute('data-vp') === vp ? 'true' : 'false'
-      );
-    });
-  }
+    function setVp(vp) {
+      frame?.setAttribute('data-vp', vp);
+      vpButtons.forEach(b => {
+        b.setAttribute(
+          'data-active',
+          b.getAttribute('data-vp') === vp ? 'true' : 'false'
+        );
+      });
+    }
 
-  typoSelect?.addEventListener('change', e => setTypo(e.target.value));
-  vpButtons.forEach(btn =>
-    btn.addEventListener('click', () => setVp(btn.getAttribute('data-vp')))
-  );
+    typoSelect?.addEventListener('change', e => setTypo(e.target.value));
+    vpButtons.forEach(btn =>
+      btn.addEventListener('click', () => setVp(btn.getAttribute('data-vp')))
+    );
 
-  // defaults
-  setTypo('a');
-  setVp('desktop');
-</script>
+    // defaults
+    setTypo('a');
+    setVp('desktop');
+  </script>
+</Layout>

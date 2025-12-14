@@ -39,7 +39,8 @@ const options = [
 
       <div
         class='flex flex-col gap-3 mt-2 md:flex-row md:items-end md:justify-between'>
-        <h1 class='text-3xl font-semibold tracking-tight md:text-4xl'>
+        <h1
+          class='tp-heading text-3xl font-semibold tracking-tight md:text-4xl'>
           Comparación de tipografías
         </h1>
 
@@ -324,7 +325,37 @@ const options = [
     --tp-sage: #9aa79e; /* optional (door metal vibe) */
   }
 
-  /* Theme → just switches font variables */
+  /* Theme → font variables applied to body so header also changes */
+  body[data-typo='a'] {
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body:
+      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+  body[data-typo='b'] {
+    --font-heading:
+      'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+    --font-body:
+      'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+  body[data-typo='c'] {
+    --font-heading: 'DM Serif Display', ui-serif, Georgia, serif;
+    --font-body:
+      'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      Arial, 'Noto Sans', 'Noto Sans JP', sans-serif;
+  }
+
+  /* Apply fonts globally */
+  body {
+    font-family: var(--font-body);
+  }
+  .tp-heading {
+    font-family: var(--font-heading) !important;
+  }
+
+  /* Keep preview-specific rules for backwards compatibility */
   #preview[data-typo='a'] {
     --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
     --font-body:
@@ -353,6 +384,7 @@ const options = [
 
   const setTypo = id => {
     preview.setAttribute('data-typo', id);
+    document.body.setAttribute('data-typo', id);
     if (select.value !== id) select.value = id;
   };
 
